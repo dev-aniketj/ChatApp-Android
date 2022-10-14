@@ -59,8 +59,7 @@ public class LoginActivity extends AppCompatActivity {
                 // sign in setUp Code
                 auth.signInWithEmailAndPassword(email, password).addOnCompleteListener(task -> {
                     if (task.isSuccessful()) {
-                        Intent intent = new Intent(this, HomeActivity.class);
-                        startActivity(intent);
+                        startActivity(new Intent(this, HomeActivity.class));
                     } else {
                         Toasty.error(this, "Login Failed");
                     }
@@ -73,8 +72,7 @@ public class LoginActivity extends AppCompatActivity {
 
         // setUp the SignUp TextView for Goto Registration Activity
         loginBinding.signUpTv.setOnClickListener(view -> {
-            Intent intent = new Intent(this, RegistrationActivity.class);
-            startActivity(intent);
+            startActivity(new Intent(this, RegistrationActivity.class));
             finish();
         });
     }
