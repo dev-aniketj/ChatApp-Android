@@ -64,6 +64,7 @@ public class HomeActivity extends AppCompatActivity {
                         Users users = dataSnapshot.getValue(Users.class);
                         usersArrayList.add(users);
                     }
+                    // when user do changes on to user array list
                     userAdapter.notifyDataSetChanged();
                     setUpMainRecyclerView();
                 }
