@@ -27,7 +27,7 @@ public class HomeActivity extends AppCompatActivity {
     private FirebaseAuth auth;
     private FirebaseDatabase database;
     private DatabaseReference reference;
-    private ArrayList<Users> usersArrayList;
+    private ArrayList<Users> usersArrayList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,6 +65,7 @@ public class HomeActivity extends AppCompatActivity {
                         usersArrayList.add(users);
                     }
                     userAdapter.notifyDataSetChanged();
+                    setUpMainRecyclerView();
                 }
 
                 @Override

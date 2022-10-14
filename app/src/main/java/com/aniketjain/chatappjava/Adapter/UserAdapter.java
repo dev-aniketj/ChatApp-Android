@@ -20,8 +20,8 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserItemViewHolder> {
 
-    private Context context;
-    private ArrayList<Users> usersArrayList;
+    private final Context context;
+    private final ArrayList<Users> usersArrayList;
 
     public UserAdapter(Context context, ArrayList<Users> usersArrayList) {
         this.context = context;
@@ -41,7 +41,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserItemViewHo
         Users users = usersArrayList.get(position);
 
         holder.userRl.setOnClickListener(view -> {
-            Toasty.normal(context, "Tap on User");
+            Toasty.normal(context, "Tap on " + users.getName());
         });
 
         //Picasso.get().load(users.getImage_uri()).into(holder.profileIv);
