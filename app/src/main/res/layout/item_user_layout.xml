@@ -22,9 +22,10 @@
         android:id="@+id/user_ll"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
         android:layout_centerVertical="true"
-        android:layout_marginStart="12dp"
-        android:layout_toEndOf="@id/profile_iv"
+        android:layout_marginHorizontal="12dp"
+        android:layout_toEndOf="@id/user_profile_iv"
         android:orientation="vertical">
 
         <TextView
