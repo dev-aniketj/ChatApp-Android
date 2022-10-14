@@ -3,10 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/Aniket/AndroidStudioProjects/ChatAppJava/app/src/main/res/layout/activity_home.xml" value="0.19010416666666666" />
+        <entry key="..\:/Users/Aniket/AndroidStudioProjects/ChatAppJava/app/src/main/res/drawable/bg_item_user.xml" value="0.139" />
+        <entry key="..\:/Users/Aniket/AndroidStudioProjects/ChatAppJava/app/src/main/res/drawable/ic_baseline_power_settings_new_24.xml" value="0.139" />
+        <entry key="..\:/Users/Aniket/AndroidStudioProjects/ChatAppJava/app/src/main/res/layout/activity_home.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Aniket/AndroidStudioProjects/ChatAppJava/app/src/main/res/layout/activity_login.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Aniket/AndroidStudioProjects/ChatAppJava/app/src/main/res/layout/activity_registration.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Aniket/AndroidStudioProjects/ChatAppJava/app/src/main/res/layout/activity_splash_screen.xml" value="0.19722222222222222" />
+        <entry key="..\:/Users/Aniket/AndroidStudioProjects/ChatAppJava/app/src/main/res/layout/item_user_layout.xml" value="0.20416666666666666" />
       </map>
     </option>
   </component>

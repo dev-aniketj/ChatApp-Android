@@ -1,6 +1,6 @@
 package com.aniketjain.chatappjava.Activity;
 
-import static com.aniketjain.chatappjava.Constant.Pattern.emailPattern;
+import static com.aniketjain.chatappjava.Constant.ConstantPattern.emailPattern;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -9,6 +9,7 @@ import android.os.Bundle;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.aniketjain.chatappjava.Constant.ConstantProgressDialog;
 import com.aniketjain.chatappjava.Model.Users;
 import com.aniketjain.chatappjava.databinding.ActivityRegistrationBinding;
 import com.aniketjain.roastedtoast.Toasty;
@@ -29,6 +30,7 @@ public class RegistrationActivity extends AppCompatActivity {
     private FirebaseDatabase database;
     private FirebaseStorage storage;
 
+    private ConstantProgressDialog constantProgressDialog;
     private String profile_image_url;
 
     @Override
@@ -44,11 +46,15 @@ public class RegistrationActivity extends AppCompatActivity {
         database = FirebaseDatabase.getInstance();
         storage = FirebaseStorage.getInstance();
 
+        // setUp the progress dialog
+        constantProgressDialog = new ConstantProgressDialog(this);
+
         // setUp the click listeners
         onClickListeners();
 
 
     }
+
 
     private void onClickListeners() {
 
@@ -62,6 +68,10 @@ public class RegistrationActivity extends AppCompatActivity {
 
         // setUp the Sign Up Button for New User
         registrationBinding.signUpBtn.setOnClickListener(view -> {
+
+            // progress dialog show user click on the button
+            constantProgressDialog.show();
+
             // get the name, email, password for the New User
             String name = registrationBinding.nameEt.getText().toString();
             String email = registrationBinding.emailEt.getText().toString();
@@ -73,6 +83,9 @@ public class RegistrationActivity extends AppCompatActivity {
              * when the new user is sign up
              */
             if (name.isEmpty() || email.isEmpty() || password.isEmpty() || confirm_password.isEmpty()) {
+                // progress dialog disable
+                constantProgressDialog.dismiss();
+
                 if (name.isEmpty()) {
                     registrationBinding.nameEt.setError("Please enter the name");
                 } else if (email.isEmpty()) {
@@ -83,10 +96,19 @@ public class RegistrationActivity extends AppCompatActivity {
                     registrationBinding.confirmPasswordEt.setError("Please enter the confirm password");
                 }
             } else if (email.matches(emailPattern)) {
+                // progress dialog disable
+                constantProgressDialog.dismiss();
+
                 registrationBinding.emailEt.setError("Invalid email address");
             } else if (password.length() < 6) {
+                // progress dialog disable
+                constantProgressDialog.dismiss();
+
                 registrationBinding.passwordEt.setError("Please enter valid password");
             } else if (!password.equals(confirm_password)) {
+                // progress dialog disable
+                constantProgressDialog.dismiss();
+
                 registrationBinding.confirmPasswordEt.setError("Enter the same password");
             } else {
 
@@ -118,10 +140,16 @@ public class RegistrationActivity extends AppCompatActivity {
                                 // and it to the Home Activity
                                 databaseReference.setValue(users).addOnCompleteListener(task2 -> {
                                     if (task2.isSuccessful()) {
+                                        // progress dialog disable
+                                        constantProgressDialog.dismiss();
+
                                         Toasty.success(this, "User Created Successfully");
                                         startActivity(new Intent(this, HomeActivity.class));
                                         finish();
                                     } else {
+                                        // progress dialog disable
+                                        constantProgressDialog.dismiss();
+
                                         Toasty.error(this, "Error in Creating User");
                                     }
                                 });
@@ -130,6 +158,9 @@ public class RegistrationActivity extends AppCompatActivity {
 
 
                     } else {
+                        // progress dialog disable
+                        constantProgressDialog.dismiss();
+
                         Toasty.error(this, "Registration Failed");
                     }
                 });
@@ -157,4 +188,5 @@ public class RegistrationActivity extends AppCompatActivity {
             }
         }
     }
+
 }

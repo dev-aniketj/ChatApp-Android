@@ -15,10 +15,14 @@
     <color name="color4">#8E05C2</color>
     <color name="color5">#F2EFF3</color>
 
-
+    <color name="statusColor">#7e04ae</color>
     <color name="mainBGColor">#F2EFF3</color>
     <color name="headingTextColor">#180520</color>
     <color name="hintTextColor">#9B180520</color>
     <color name="borderColor">#8E05C2</color>
+    <color name="toolbarBGColor">#bb1ff9</color>
+    <color name="toolbarTextColor">#F2EFF3</color>
+    <color name="itemUserBColor">#F2EFF3</color>
+    <color name="itemUserBorderColor">#6c0495</color>
 
 </resources>

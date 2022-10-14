@@ -5,6 +5,7 @@ public class Users {
     String name;
     String email;
     String image_uri;
+    String status = "Hey there, I am using this chat app";
 
     public Users() {
     }
@@ -46,5 +47,13 @@ public class Users {
 
     public void setImage_uri(String image_uri) {
         this.image_uri = image_uri;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 }
