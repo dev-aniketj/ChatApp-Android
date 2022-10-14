@@ -1,4 +1,6 @@
-package com.aniketjain.chatappjava;
+package com.aniketjain.chatappjava.Activity;
+
+import static com.aniketjain.chatappjava.Constant.Pattern.emailPattern;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -22,25 +24,27 @@ public class LoginActivity extends AppCompatActivity {
         loginBinding = ActivityLoginBinding.inflate(getLayoutInflater());
         setContentView(loginBinding.getRoot());
 
+        // Firebase Current User Instance
+        auth = FirebaseAuth.getInstance();
 
+        // setUp the click listeners
         onClickListeners();
 
     }
 
     private void onClickListeners() {
 
+        // setUp the Sign In Button for User
         loginBinding.signInBtn.setOnClickListener(view -> {
 
+            // get the email, password for the User Login
             String email = loginBinding.emailEt.getText().toString();
             String password = loginBinding.passwordEt.getText().toString();
 
-            String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\\\.+[a-z]+";
-
             /*
              * Check the validation of email and password
-             * when we are sign the user
+             * when the user is sign in
              */
-
             if (email.isEmpty() || password.isEmpty()) {
                 if (email.isEmpty()) {
                     loginBinding.emailEt.setError("Please enter the email address");
@@ -52,8 +56,7 @@ public class LoginActivity extends AppCompatActivity {
             } else if (password.length() < 6) {
                 loginBinding.passwordEt.setError("Please enter valid password");
             } else {
-
-                // login auth setUp Code
+                // sign in setUp Code
                 auth.signInWithEmailAndPassword(email, password).addOnCompleteListener(task -> {
                     if (task.isSuccessful()) {
                         Intent intent = new Intent(this, HomeActivity.class);
@@ -68,10 +71,11 @@ public class LoginActivity extends AppCompatActivity {
 
         });
 
-
+        // setUp the SignUp TextView for Goto Registration Activity
         loginBinding.signUpTv.setOnClickListener(view -> {
             Intent intent = new Intent(this, RegistrationActivity.class);
             startActivity(intent);
+            finish();
         });
     }
 }

@@ -1,4 +1,4 @@
-package com.aniketjain.chatappjava;
+package com.aniketjain.chatappjava.Activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -21,11 +21,13 @@ public class HomeActivity extends AppCompatActivity {
         binding = ActivityHomeBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        // Firebase Current User Instance
         auth = FirebaseAuth.getInstance();
 
         if (auth.getCurrentUser() == null) {
             Intent intent = new Intent(HomeActivity.this, LoginActivity.class);
             startActivity(intent);
+            finish();
         } else {
 
         }

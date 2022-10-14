@@ -50,4 +50,7 @@ dependencies {
 
     // custom toast
     implementation 'com.github.dev-aniketj:roasted-toast:1.0.2'
+
+    // circular imageview
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
 }
