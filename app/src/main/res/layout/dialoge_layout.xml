@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:layout_margin="12dp"
+    android:background="@drawable/dialoge_shape"
+    android:padding="16dp">
+
+    <ImageView
+        android:id="@+id/logout_iv"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/ic_baseline_power_settings_new_24"
+        app:tint="@color/dialogBtnColor" />
+
+    <TextView
+        android:id="@+id/logout_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/logout_iv"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:letterSpacing="0.05"
+        android:text="Are you sure want to LogOut ?"
+        android:textColor="@color/textColor"
+        android:textSize="19sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/logout_tv"
+        android:layout_marginTop="8dp"
+        android:weightSum="2">
+
+        <Button
+            android:id="@+id/logout_yes_btn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="4dp"
+            android:layout_weight="1"
+            android:background="@drawable/logout_yes_btn_bg"
+            android:clickable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:letterSpacing="0.05"
+            android:text="Yes"
+            android:textAllCaps="false"
+            android:textColor="@color/textColor"
+            android:textSize="19sp" />
+
+        <Button
+            android:id="@+id/logout_no_btn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="4dp"
+            android:layout_weight="1"
+            android:background="@drawable/logout_no_btn_bg"
+            android:clickable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:letterSpacing="0.05"
+            android:text="No"
+            android:textAllCaps="false"
+            android:textColor="@color/dialogBGColor"
+            android:textSize="19sp" />
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,6 +1,7 @@
 package com.aniketjain.chatappjava.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,9 +11,10 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.aniketjain.chatappjava.Activity.ChatActivity;
 import com.aniketjain.chatappjava.Model.Users;
 import com.aniketjain.chatappjava.R;
-import com.aniketjain.roastedtoast.Toasty;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
@@ -20,8 +22,8 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserItemViewHolder> {
 
-    private Context context;
-    private ArrayList<Users> usersArrayList;
+    private final Context context;
+    private final ArrayList<Users> usersArrayList;
 
     public UserAdapter(Context context, ArrayList<Users> usersArrayList) {
         this.context = context;
@@ -40,13 +42,19 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserItemViewHo
 
         Users users = usersArrayList.get(position);
 
-        holder.userRl.setOnClickListener(view -> {
-            Toasty.normal(context, "Tap on User");
-        });
-
-        //Picasso.get().load(users.getImage_uri()).into(holder.profileIv);
+        // set data to the item layout
+        Picasso.get().load(users.getImage_uri()).into(holder.profileIv);
         holder.nameTv.setText(users.getName());
         holder.statusTv.setText(users.getStatus());
+
+        // when user click on the user profile
+        holder.userRl.setOnClickListener(view -> {
+            Intent intent = new Intent(context, ChatActivity.class);
+            intent.putExtra("receiver_uid", users.getUid());
+            intent.putExtra("receiver_name", users.getName());
+            intent.putExtra("receiver_image", users.getImage_uri());
+            context.startActivity(intent);
+        });
     }
 
     @Override
