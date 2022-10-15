@@ -16,10 +16,10 @@
         android:layout_marginTop="24dp"
         android:layout_marginEnd="24dp"
         android:layout_marginBottom="24dp"
-        android:letterSpacing="0.1"
+        android:letterSpacing="0.05"
         android:text="Sign In"
         android:textAllCaps="false"
-        android:textColor="@color/headingTextColor"
+        android:textColor="@color/textColor"
         android:textSize="24sp" />
 
     <EditText
@@ -33,8 +33,9 @@
         android:hint="Email Address"
         android:imeOptions="actionGo"
         android:inputType="textEmailAddress"
+        android:letterSpacing="0.05"
         android:paddingStart="8dp"
-        android:textColor="@color/headingTextColor"
+        android:textColor="@color/textColor"
         android:textColorHint="@color/hintTextColor" />
 
     <EditText
@@ -49,8 +50,9 @@
         android:hint="Password"
         android:imeOptions="actionDone"
         android:inputType="textPassword"
+        android:letterSpacing="0.025"
         android:paddingStart="8dp"
-        android:textColor="@color/headingTextColor"
+        android:textColor="@color/textColor"
         android:textColorHint="@color/hintTextColor" />
 
     <Button
@@ -60,10 +62,12 @@
         android:layout_below="@id/password_et"
         android:layout_marginHorizontal="16dp"
         android:layout_marginVertical="16dp"
-        android:letterSpacing="0.125"
+        android:background="@drawable/btn_bg"
+        android:letterSpacing="0.025"
         android:text="Sign In"
         android:textAllCaps="false"
-        android:textSize="14sp" />
+        android:textColor="@color/btnTextColor"
+        android:textSize="17sp" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -78,10 +82,10 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:letterSpacing="0.125"
-            android:text="If You don't have an account!!"
+            android:letterSpacing="0.025"
+            android:text="If You don't have an account !"
             android:textAllCaps="false"
-            android:textColor="@color/headingTextColor"
+            android:textColor="@color/textColor"
             android:textSize="18sp" />
 
         <TextView
@@ -89,10 +93,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:letterSpacing="0.125"
+            android:letterSpacing="0.025"
             android:text="Sign Up"
             android:textAllCaps="false"
-            android:textColor="@color/headingTextColor"
+            android:textColor="@color/btnBGColor"
             android:textSize="18sp"
             android:textStyle="bold" />
     </LinearLayout>

@@ -3,12 +3,22 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Aniket/AndroidStudioProjects/ChatAppJava/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.139" />
         <entry key="..\:/Users/Aniket/AndroidStudioProjects/ChatAppJava/app/src/main/res/drawable/bg_item_user.xml" value="0.139" />
+        <entry key="..\:/Users/Aniket/AndroidStudioProjects/ChatAppJava/app/src/main/res/drawable/btn_bg.xml" value="0.139" />
+        <entry key="..\:/Users/Aniket/AndroidStudioProjects/ChatAppJava/app/src/main/res/drawable/dialoge_empty_bg.xml" value="0.139" />
+        <entry key="..\:/Users/Aniket/AndroidStudioProjects/ChatAppJava/app/src/main/res/drawable/dialoge_shape.xml" value="0.139" />
         <entry key="..\:/Users/Aniket/AndroidStudioProjects/ChatAppJava/app/src/main/res/drawable/ic_baseline_power_settings_new_24.xml" value="0.139" />
+        <entry key="..\:/Users/Aniket/AndroidStudioProjects/ChatAppJava/app/src/main/res/drawable/ic_launcher_background.xml" value="0.139" />
+        <entry key="..\:/Users/Aniket/AndroidStudioProjects/ChatAppJava/app/src/main/res/drawable/logout_btn_bg1.xml" value="0.139" />
+        <entry key="..\:/Users/Aniket/AndroidStudioProjects/ChatAppJava/app/src/main/res/drawable/logout_no_btn_bg.xml" value="0.139" />
+        <entry key="..\:/Users/Aniket/AndroidStudioProjects/ChatAppJava/app/src/main/res/drawable/logout_yes_btn_bg.xml" value="0.139" />
+        <entry key="..\:/Users/Aniket/AndroidStudioProjects/ChatAppJava/app/src/main/res/layout/activity_chat.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Aniket/AndroidStudioProjects/ChatAppJava/app/src/main/res/layout/activity_home.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Aniket/AndroidStudioProjects/ChatAppJava/app/src/main/res/layout/activity_login.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Aniket/AndroidStudioProjects/ChatAppJava/app/src/main/res/layout/activity_registration.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Aniket/AndroidStudioProjects/ChatAppJava/app/src/main/res/layout/activity_splash_screen.xml" value="0.19722222222222222" />
+        <entry key="..\:/Users/Aniket/AndroidStudioProjects/ChatAppJava/app/src/main/res/layout/dialoge_layout.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Aniket/AndroidStudioProjects/ChatAppJava/app/src/main/res/layout/item_user_layout.xml" value="0.20416666666666666" />
       </map>
     </option>

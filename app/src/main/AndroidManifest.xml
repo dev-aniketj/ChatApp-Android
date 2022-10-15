@@ -13,6 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ChatAppJava">
         <activity
+            android:name=".Activity.ChatActivity"
+            android:exported="false" />
+        <activity
             android:name=".Activity.LoginActivity"
             android:exported="false" />
         <activity
