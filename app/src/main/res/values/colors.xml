@@ -38,4 +38,12 @@
     <color name="dialogBGColor">#F2EFF3</color>
     <color name="dialogBtnColor">#bb1ff9</color>
 
+    <!-- sender layout -->
+    <color name="messageProfileBorderColor">#bb1ff9</color>
+    <color name="senderBGColor">#bb1ff9</color>
+    <color name="senderTextColor">#F2EFF3</color>
+    <!-- receiver layout -->
+    <color name="receiverBGColor">#404040</color>
+    <color name="receiverTextColor">#F2EFF3</color>
+
 </resources>

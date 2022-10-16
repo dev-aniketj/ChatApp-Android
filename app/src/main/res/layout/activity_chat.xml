@@ -40,8 +40,51 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/chat_rv"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/send_message_cv"
         android:layout_below="@id/receiver_top_ll"
         android:orientation="vertical" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/send_message_cv"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="6dp"
+        android:layout_toStartOf="@id/send_message_cv_btn"
+        app:cardBackgroundColor="#ccbfe9"
+        app:cardCornerRadius="25dp">
+
+        <EditText
+            android:id="@+id/chat_message_et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:background="@null"
+            android:hint="Type Your Message..."
+            android:letterSpacing="0.025"
+            android:paddingHorizontal="12dp"
+            android:textSize="17sp" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/send_message_cv_btn"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="6dp"
+        android:layout_marginEnd="6dp"
+        android:layout_marginBottom="6dp"
+        app:cardBackgroundColor="#bb1ff9"
+        app:cardCornerRadius="25dp">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="center"
+            android:src="@drawable/ic_baseline_send_24" />
+    </androidx.cardview.widget.CardView>
 
 </RelativeLayout>
