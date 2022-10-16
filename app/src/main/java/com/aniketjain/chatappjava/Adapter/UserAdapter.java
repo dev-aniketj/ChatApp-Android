@@ -14,9 +14,11 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.aniketjain.chatappjava.Activity.ChatActivity;
 import com.aniketjain.chatappjava.Model.Users;
 import com.aniketjain.chatappjava.R;
+import com.google.firebase.auth.FirebaseAuth;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -42,24 +44,27 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserItemViewHo
 
         Users users = usersArrayList.get(position);
 
-        // set data to the item layout
-        Picasso.get().load(users.getImage_uri()).into(holder.profileIv);
-        holder.nameTv.setText(users.getName());
-        holder.statusTv.setText(users.getStatus());
+        if(!Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid()
+                .equals(users.getUid())){
+            // set data to the item layout
+            Picasso.get().load(users.getImage_uri()).into(holder.profileIv);
+            holder.nameTv.setText(users.getName());
+            holder.statusTv.setText(users.getStatus());
 
-        // when user click on the user profile
-        holder.userRl.setOnClickListener(view -> {
-            Intent intent = new Intent(context, ChatActivity.class);
-            intent.putExtra("receiver_uid", users.getUid());
-            intent.putExtra("receiver_name", users.getName());
-            intent.putExtra("receiver_image", users.getImage_uri());
-            context.startActivity(intent);
-        });
+            // when user click on the user profile
+            holder.userRl.setOnClickListener(view -> {
+                Intent intent = new Intent(context, ChatActivity.class);
+                intent.putExtra("receiver_uid", users.getUid());
+                intent.putExtra("receiver_name", users.getName());
+                intent.putExtra("receiver_image", users.getImage_uri());
+                context.startActivity(intent);
+            });
+        }
     }
 
     @Override
     public int getItemCount() {
-        return usersArrayList.size();
+        return usersArrayList.size()-1;
     }
 
     static class UserItemViewHolder extends RecyclerView.ViewHolder {
