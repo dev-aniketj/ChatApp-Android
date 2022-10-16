@@ -43,9 +43,9 @@
         android:layout_marginEnd="16dp"
         android:gravity="start"
         android:hint="Name"
-        android:letterSpacing="0.025"
         android:imeOptions="actionGo"
         android:inputType="text"
+        android:letterSpacing="0.025"
         android:paddingStart="8dp"
         android:textColor="@color/textColor"
         android:textColorHint="@color/hintTextColor" />
