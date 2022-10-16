@@ -19,6 +19,8 @@ import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.Date;
 import java.util.Objects;
 
@@ -68,10 +70,12 @@ public class ChatActivity extends AppCompatActivity {
 //        databaseReference = database.getReference().child("user").child(senderUID);
         chatReference = FirebaseDatabase.getInstance().getReference().child("chats").child(senderRoom).child("messages");
 
+
+        setUpRecyclerView();
+
         // get all the message and store it into the Message Array List
         getChatData();
 
-        setUpRecyclerView();
 
     }
 
@@ -118,7 +122,7 @@ public class ChatActivity extends AppCompatActivity {
         linearLayoutManager.setStackFromEnd(true);
 
         //
-        messagesAdapter = new MessagesAdapter(this, messagesArrayList);
+        messagesAdapter = new MessagesAdapter(this, messagesArrayList, senderImage, receiverImage);
 
         //
         chatBinding.chatRv.setLayoutManager(linearLayoutManager);
@@ -185,12 +189,14 @@ public class ChatActivity extends AppCompatActivity {
             @SuppressLint("NotifyDataSetChanged")
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
+                messagesArrayList.clear();
                 for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
                     Messages messages = dataSnapshot.getValue(Messages.class);
                     messagesArrayList.add(messages);
                 }
                 // set the data change in recycler view
                 messagesAdapter.notifyDataSetChanged();
+                setUpRecyclerView();
             }
 
             @Override

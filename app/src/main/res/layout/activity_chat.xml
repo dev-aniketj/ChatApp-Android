@@ -63,6 +63,7 @@
             android:layout_gravity="center_vertical"
             android:background="@null"
             android:hint="Type Your Message..."
+            android:inputType="text"
             android:letterSpacing="0.025"
             android:paddingHorizontal="12dp"
             android:textSize="17sp" />

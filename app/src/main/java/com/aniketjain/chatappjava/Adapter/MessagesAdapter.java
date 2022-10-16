@@ -1,8 +1,5 @@
 package com.aniketjain.chatappjava.Adapter;
 
-import static com.aniketjain.chatappjava.Activity.ChatActivity.receiverImage;
-import static com.aniketjain.chatappjava.Activity.ChatActivity.senderImage;
-
 import android.content.Context;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -27,12 +24,16 @@ public class MessagesAdapter extends RecyclerView.Adapter {
 
     private final Context context;
     private final ArrayList<Messages> messagesArrayList;
+    private final String senderImage;
+    private final String receiverImage;
     private final int ITEM_SEND = 1;
     private final int ITEM_RECEIVE = 2;
 
-    public MessagesAdapter(Context context, ArrayList<Messages> messagesArrayList) {
+    public MessagesAdapter(Context context, ArrayList<Messages> messagesArrayList, String senderImage, String receiverImage) {
         this.context = context;
         this.messagesArrayList = messagesArrayList;
+        this.senderImage = senderImage;
+        this.receiverImage = receiverImage;
     }
 
     @NonNull
